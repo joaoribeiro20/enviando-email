@@ -25,17 +25,13 @@ public class Main {
         //usuariop.setNome("joao");
         //System.out.println(usuariop.getNome());
 
-        System.out.println("Digite o seu nome e primeiro sobrenome:");
+        System.out.println("Digite o seu nome:");
         String nome = ler.nextLine();
         usuariop.setNome(nome);
 
         System.out.println("Digite o seu gmail:");
         String gmail = ler.nextLine();
         usuariop.setGmail(gmail);
-
-        System.out.println("Os dados cadastrados foram: -----");
-        System.out.println("nome pessoal: -----" + usuariop.getNome());
-        System.out.println("gmail: -----" + usuariop.getGmail());
 
         /** Parâmetros de conexão com servidor Gmail
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -70,7 +66,10 @@ public class Main {
             /**Método para enviar a mensagem criada*/
             Transport.send(message);
 
-            System.out.println(" Feito, email enviado !!!");
+            System.out.println(" Feito, email de confirmação enviado !!!");
+            System.out.println(" Os dados cadastrados foram:");
+            System.out.println(" nome pessoal: ----- " + usuariop.getNome());
+            System.out.println(" gmail: ----- " + usuariop.getGmail());
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
